@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM python:3.8.2-slim
 
-RUN apt-get update 
-RUN apt-get install -y python3 python3-pip
-RUN apt-get install -y python-numpy python-matplotlib
+WORKDIR /app
 
 COPY newton_binomial.py .
 
-ENTRYPOINT [ "python3", "newton_binomial.py" ]
+RUN pip install numpy matplotlib
+
+CMD ["python", "newton_binomial.py"]
