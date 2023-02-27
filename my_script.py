@@ -1,26 +1,13 @@
 #!/usr/bin/env python
 import re
 
-def binomial(n, k):
-    if k < 0 or k > n:
-        return 0
-    if k == 0 or k == n:
-        return 1
-    return binomial(n-1, k-1) + binomial(n-1, k)
+def binomial(n):
+    for i in range(n+1):
+        print('1', end="")
+        for j in range(1, i+1):
+            coef = str(i * (i-j+1) // j)
+            print(' (' + re.sub(r'(\d)', r'\033[34m\1\033[0m', coef) + ')', end="")
+        print()
 
-def color_digits(number):
-    colored_number = ""
-    for digit in str(number):
-        if digit == "1":
-            colored_number += "  \033[37m  " + digit + "  \033[0m  "
-        else:
-            colored_number += "  \033[34m  " + digit + "  \033[0m  "
-    return colored_number
-
-def print_binomial_theorem(n):
-    for k in range(n+1):
-        coefficient = binomial(n, k)
-        colored_coefficient = color_digits(coefficient)
-        print(colored_coefficient)
-
-print_binomial_theorem(15)
+if __name__ == '__main__':
+    binomial(15)
