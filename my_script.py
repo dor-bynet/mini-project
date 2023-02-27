@@ -1,19 +1,21 @@
 #!/usr/bin/env python
-import re
+import sys
 
-def binomial(n):
-    for i in range(n + 1):
-        # Print leading spaces
-        for j in range(n - i):
-            print(' ', end='')
-        # Print first number
-        coef = '1'
-        print(re.sub(r'(1)', r'\033[91m\1\033[0m', coef), end="")
-        # Print rest of row
-        for j in range(1, i+1):
-            coef = str(i * (i-j+1) // j)
-            print(' (' + re.sub(r'(\d)', r'\033[34m\1\033[0m', coef) + ')', end="")
-        print()
+# Set the text color to red
+sys.stdout.write("\x1b[31m")
 
-if __name__ == '__main__':
-    binomial(15)
+# Print the 1 digits
+for i in range(1, 11):
+    for j in range(1, i+1):
+        if (j == 1 or j == i):
+            # Set the text color to red
+            sys.stdout.write("\x1b[31m")
+            print(j, end=" ")
+        else:
+            # Set the text color to blue
+            sys.stdout.write("\x1b[34m")
+            print(j, end=" ")
+    print()
+
+# Set the text color to default
+sys.stdout.write("\x1b[0m")
