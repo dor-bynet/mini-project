@@ -23,4 +23,4 @@ def print_binomial_theorem(n):
         colored_coefficient = color_digits(coefficient)
         print(colored_coefficient)
 
-print_binomial_theorem(30)
+print_binomial_theorem(15)
