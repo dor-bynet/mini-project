@@ -20,4 +20,4 @@ def binomialCoeff(n, k):
     return res 
 
 n = int(input("Enter Number of rows: ")) 
-newton_binomial(n)
+newton_binomial(15)
