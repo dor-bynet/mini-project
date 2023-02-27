@@ -8,7 +8,7 @@ def binomial(n):
             print(' ', end='')
         # Print first number
         coef = '1'
-        print(re.sub(r'(1)', r'\033[90m\1\033[0m', coef), end="")
+        print(re.sub(r'(1)', r'\033[91m\1\033[0m', coef), end="")
         # Print rest of row
         for j in range(1, i+1):
             coef = str(i * (i-j+1) // j)
