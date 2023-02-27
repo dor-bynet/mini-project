@@ -10,8 +10,8 @@ def newton_binomial(n):
             else: 
                 print("\033[94m" + str(int(binomialCoeff(i, j))) + "\033[0m", end=" ")
         for j in range(0, n-i-1): 
-            print(" ", end=" ")
-        print("") 
+            print("  ", end="  ")
+        print(" ") 
      
 def binomialCoeff(n, k): 
     res = 1
