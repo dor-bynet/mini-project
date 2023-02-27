@@ -8,10 +8,10 @@ def binomial(n):
         output = ""
         for j in range(i + 1):
             if j == 0:
-                output += f"{Fore.LIGHTBLACK_EX}1{Style.RESET_ALL}"
+                output += '%s1%s' % (Fore.LIGHTBLACK_EX, Style.RESET_ALL)
             else:
                 coef = str(i * (i - j + 1) // j)
-                output += f" ({Fore.BLUE}{coef}{Style.RESET_ALL})"
+                output += ' (%s%s%s)' % (Fore.BLUE, coef, Style.RESET_ALL)
         print(output)
 
 
