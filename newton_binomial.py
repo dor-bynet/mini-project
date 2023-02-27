@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#!/usr/bin/env python
 
 def newton_binomial(n): 
     for i in range(0, n): 
