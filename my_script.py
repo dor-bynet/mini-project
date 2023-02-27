@@ -1,20 +1,27 @@
 #!/usr/bin/env python
-import colorama
-from colorama import Fore, Style
+import re
 
+def binomial(n, k):
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    return binomial(n-1, k-1) + binomial(n-1, k)
 
-def binomial(n):
-    for i in range(n + 1):
-        output = ""
-        for j in range(i + 1):
-            if j == 0:
-                output += '%s1%s' % (Fore.LIGHTBLACK_EX, Style.RESET_ALL)
-            else:
-                coef = str(i * (i - j + 1) // j)
-                output += ' (%s%s%s)' % (Fore.BLUE, coef, Style.RESET_ALL)
-        print(output)
+def color_digits(number):
+    colored_number = ""
+    for digit in str(number):
+        if digit == "1":
+            colored_number += "\033[37m" + digit + "\033[0m"
+        else:
+            colored_number += "\033[34m" + digit + "\033[0m"
+    return colored_number
 
+def print_binomial_theorem(n):
+    for k in range(n+1):
+        coefficient = binomial(n, k)
+        term = f"{coefficient}x^{n-k}y^{k}"
+        colored_term = re.sub(r"\d+", lambda match: color_digits(match.group()), term)
+        print(colored_term)
 
-if __name__ == '__main__':
-    colorama.init()
-    binomial(5)
+print_binomial_theorem(5)
