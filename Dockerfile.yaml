@@ -1,9 +1,0 @@
-FROM python:3.8.2-slim
-
-WORKDIR /app
-
-COPY newton_binomial.py .
-
-RUN pip install numpy matplotlib
-
-CMD ["python", "newton_binomial.py"]
