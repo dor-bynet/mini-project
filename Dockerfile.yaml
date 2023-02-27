@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 EXPOSE 80
 
 # Run the script when the container launches
-CMD ["python", "newton_binomial.py"]
+CMD ["python", "my_script.py"]
