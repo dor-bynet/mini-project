@@ -2,14 +2,14 @@
 
 def newton_binomial(n): 
     for i in range(0, n): 
-        for j in range(0, n-i-1): 
+        for j in range(0, 3*(n-i-1)): 
             print(" ", end=" ")
         for j in range(0, i+1): 
             if(j == 0 or i == j): 
                 print("\033[91m" + str(1) + "\033[0m", end=" ") 
             else: 
                 print("\033[94m" + str(int(binomialCoeff(i, j))) + "\033[0m", end=" ")
-        for j in range(0, n-i-1): 
+        for j in range(0, 3*(n-i-1)): 
             print(" ", end=" ")
         print("") 
      
