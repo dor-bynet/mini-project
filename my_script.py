@@ -20,8 +20,7 @@ def color_digits(number):
 def print_binomial_theorem(n):
     for k in range(n+1):
         coefficient = binomial(n, k)
-        term = f"{coefficient}x^{n-k}y^{k}"
-        colored_term = re.sub(r"\d+", lambda match: color_digits(match.group()), term)
-        print(colored_term)
+        colored_coefficient = color_digits(coefficient)
+        print(colored_coefficient)
 
 print_binomial_theorem(5)
