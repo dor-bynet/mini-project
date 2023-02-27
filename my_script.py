@@ -18,5 +18,4 @@ def binomialCoeff(n, k):
         res = res * (n - i) 
         res = res // (i + 1) 
     return res 
-
 newton_binomial(15)
